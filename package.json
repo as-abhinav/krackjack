@@ -1,5 +1,5 @@
 {
-  "name": "Gulp-Compass-Neat",
+  "name": "Gulp-Sass-Neat",
   "version": "0.0.1",
   "description": " This is a professional front-end scaffholding for building fast, robust, and adaptable web apps or sites.",
   "main": "index.html",
@@ -24,6 +24,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "LJ",
+  "author": "Abhinav",
   "license": "MIT"
 }

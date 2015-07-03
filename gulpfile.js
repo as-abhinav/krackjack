@@ -37,7 +37,7 @@ var paths = {
 
 var dest  = {
     css         : 'app/assets/css',
-    script      : 'app/assets/js/app',
+    script      : 'app/assets/js/app.js',
     image       : 'app/assets/images'
 };
 

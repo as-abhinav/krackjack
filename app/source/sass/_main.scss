@@ -1,0 +1,781 @@
+//colors
+$color_log_cabin_approx: #212121;
+$white_87: rgba(255, 255, 255, 0.87);
+$black_87: rgba(0, 0, 0, 0.87);
+$black_12: rgba(0, 0, 0, 0.12);
+$black_24: rgba(0, 0, 0, 0.24);
+$black_16: rgba(0, 0, 0, 0.16);
+$black_23: rgba(0, 0, 0, 0.23);
+$white: #ffffff;
+$mercury: #e5e5e5;
+$color_celeste_approx: #cccccc;
+$color_nobel_approx: #b3b3b3;
+$color_pink_swan_approx: #b8b8b8;
+$color_bunker_approx: #141414;
+$color_black_approx: #020202;
+$black: #000000;
+$gray: #808080;
+$color_cornflower_blue_approx: #5677fc;
+$color_royal_blue_approx: #4e6cef;
+$color_cerulean_blue_approx: #3b50ce;
+$color_forest_green_approx: #259b24;
+$color_japanese_laurel_approx: #0a7e07;
+$color_cerulean_approx: #03a9f4;
+$color_lochmara_approx: #0288d1;
+$color_amber_approx: #ffc107;
+$color_selective_yellow_approx: #ffb300;
+$orange_peel: #ffa000;
+$color_pizazz_approx: #ff8f00;
+$color_flamingo_approx: #ff5722;
+$color_pomegranate_approx: #f4511e;
+$color_grenadier_approx: #d84315;
+
+//fonts
+$font_0: Roboto;
+$font_1: Helvetica Neue;
+$font_2: Helvetica;
+$font_3: Arial;
+$font_4: sans-serif;
+
+//@extend-elements
+//original selectors
+//.btn:focus, .btn:active, .btn.active, .btn:active:focus, .btn.active:focus
+%extend_1 {
+  outline: 0;
+  outline-offset: 0;
+  //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: none;
+}
+
+//original selectors
+//.btn-lg, .btn-group-lg > .btn
+%extend_2 {
+  min-width: 122px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+//original selectors
+//.btn-sm, .btn-group-sm > .btn
+%extend_3 {
+  min-width: 64px;
+  padding: 4px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+//original selectors
+//.btn-xs, .btn-group-xs > .btn
+%extend_4 {
+  min-width: 46px;
+  padding: 2px 10px;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+
+@import "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css";
+@import "//getbootstrap.com/assets/css/docs.min.css";
+@import "https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,cyrillic";
+body {
+  font-family: $font_0, $font_1, $font_2, $font_3, $font_4;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $color_log_cabin_approx;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+.btn {
+  font-family: $font_0, $font_1, $font_2, $font_3, $font_4;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: inherit;
+  color: $white_87;
+  outline: 0;
+  outline-offset: 0;
+  border: 0;
+  //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+  border-radius: 2px;
+  //Instead of the line below you could use @includetransition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+  transition: all 0.15s ease-in-out;
+  min-width: 88px;
+  padding: 10px 14px;
+  &:focus {
+    @extend %extend_1;
+  }
+  &:active {
+    @extend %extend_1;
+    &:focus {
+      @extend %extend_1;
+    }
+  }
+  &.active {
+    @extend %extend_1;
+    &:focus {
+      @extend %extend_1;
+    }
+  }
+  &.btn-circle {
+    padding: 0;
+    //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+    border-radius: 50%;
+  }
+}
+.btn-default {
+  color: $black_87;
+  background-color: $white;
+  &:hover {
+    background-color: $mercury;
+  }
+  &:active {
+    background-color: $mercury;
+  }
+  &.active {
+    background-color: $mercury;
+  }
+  &:focus {
+    background-color: $color_celeste_approx;
+  }
+  &:disabled {
+    background-color: $color_nobel_approx;
+  }
+  &.disabled {
+    background-color: $color_nobel_approx;
+  }
+  .ink {
+    background-color: $color_pink_swan_approx;
+  }
+}
+.btn-link {
+  color: $black_87;
+}
+.btn-raised {
+  //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 1px 3px 0 $black_12, 0 1px 2px 0 $black_24;
+  &:active {
+    //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 3px 6px $black_16, 0 3px 6px $black_23;
+    &:focus {
+      //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 3px 6px $black_16, 0 3px 6px $black_23;
+    }
+  }
+  &.active {
+    //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 3px 6px $black_16, 0 3px 6px $black_23;
+    &:focus {
+      //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: 0 3px 6px $black_16, 0 3px 6px $black_23;
+    }
+  }
+  &:focus {
+    //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: 0 3px 6px $black_16, 0 3px 6px $black_23;
+  }
+}
+.dropdown-toggle {
+  &.btn-default {
+    background-color: $white;
+    &:hover {
+      background-color: $mercury;
+    }
+    &:active {
+      background-color: $mercury;
+    }
+    &.active {
+      background-color: $mercury;
+    }
+    &:focus {
+      background-color: $color_celeste_approx;
+    }
+    &:disabled {
+      background-color: $color_nobel_approx;
+    }
+    &.disabled {
+      background-color: $color_nobel_approx;
+    }
+    .ink {
+      background-color: $color_pink_swan_approx;
+    }
+  }
+  &.btn-default[disabled] {
+    background-color: $color_nobel_approx;
+  }
+  &.btn-primary {
+    background-color: $color_cornflower_blue_approx;
+    &:hover {
+      background-color: $color_royal_blue_approx;
+    }
+    &:active {
+      background-color: $color_royal_blue_approx;
+    }
+    &.active {
+      background-color: $color_royal_blue_approx;
+    }
+    &:focus {
+      background-color: $color_royal_blue_approx;
+    }
+    &:disabled {
+      background-color: $color_nobel_approx;
+    }
+    &.disabled {
+      background-color: $color_nobel_approx;
+    }
+    .ink {
+      background-color: $color_cerulean_blue_approx;
+    }
+  }
+  &.btn-primary[disabled] {
+    background-color: $color_nobel_approx;
+  }
+  &.btn-success {
+    background-color: $color_forest_green_approx;
+    &:hover {
+      background-color: $color_forest_green_approx;
+    }
+    &:active {
+      background-color: $color_forest_green_approx;
+    }
+    &.active {
+      background-color: $color_forest_green_approx;
+    }
+    &:focus {
+      background-color: $color_japanese_laurel_approx;
+    }
+    &:disabled {
+      background-color: $color_nobel_approx;
+    }
+    &.disabled {
+      background-color: $color_nobel_approx;
+    }
+    .ink {
+      background-color: $color_japanese_laurel_approx;
+    }
+  }
+  &.btn-success[disabled] {
+    background-color: $color_nobel_approx;
+  }
+  &.btn-info {
+    background-color: $color_cerulean_approx;
+    &:hover {
+      background-color: $color_cerulean_approx;
+    }
+    &:active {
+      background-color: $color_cerulean_approx;
+    }
+    &.active {
+      background-color: $color_cerulean_approx;
+    }
+    &:focus {
+      background-color: $color_lochmara_approx;
+    }
+    &:disabled {
+      background-color: $color_nobel_approx;
+    }
+    &.disabled {
+      background-color: $color_nobel_approx;
+    }
+    .ink {
+      background-color: $color_lochmara_approx;
+    }
+  }
+  &.btn-info[disabled] {
+    background-color: $color_nobel_approx;
+  }
+  &.btn-warning {
+    background-color: $color_amber_approx;
+    &:hover {
+      background-color: $color_selective_yellow_approx;
+    }
+    &:active {
+      background-color: $color_selective_yellow_approx;
+    }
+    &.active {
+      background-color: $color_selective_yellow_approx;
+    }
+    &:focus {
+      background-color: $orange_peel;
+    }
+    &:disabled {
+      background-color: $color_nobel_approx;
+    }
+    &.disabled {
+      background-color: $color_nobel_approx;
+    }
+    .ink {
+      background-color: $color_pizazz_approx;
+    }
+  }
+  &.btn-warning[disabled] {
+    background-color: $color_nobel_approx;
+  }
+  &.btn-danger {
+    background-color: $color_flamingo_approx;
+    &:hover {
+      background-color: $color_pomegranate_approx;
+    }
+    &:active {
+      background-color: $color_pomegranate_approx;
+    }
+    &.active {
+      background-color: $color_pomegranate_approx;
+    }
+    &:focus {
+      background-color: $color_pomegranate_approx;
+    }
+    &:disabled {
+      background-color: $color_nobel_approx;
+    }
+    &.disabled {
+      background-color: $color_nobel_approx;
+    }
+    .ink {
+      background-color: $color_grenadier_approx;
+    }
+  }
+  &.btn-danger[disabled] {
+    background-color: $color_nobel_approx;
+  }
+}
+.btn-default[disabled] {
+  background-color: $color_nobel_approx;
+}
+.btn-flat {
+  &.btn-default {
+    color: $color_log_cabin_approx;
+    background-color: transparent;
+    &:hover {
+      color: $color_bunker_approx;
+      background-color: $mercury;
+    }
+    &:active {
+      color: $color_black_approx;
+      background-color: $color_celeste_approx;
+    }
+    &.active {
+      color: $color_black_approx;
+      background-color: $color_celeste_approx;
+    }
+    &:focus {
+      color: $black;
+      background-color: $color_celeste_approx;
+    }
+    .ink {
+      background-color: $gray;
+    }
+  }
+  &.btn-primary {
+    color: $color_cornflower_blue_approx;
+    background-color: transparent;
+    &:hover {
+      color: $color_royal_blue_approx;
+      background-color: $mercury;
+    }
+    &:active {
+      color: $color_royal_blue_approx;
+      background-color: $color_celeste_approx;
+    }
+    &.active {
+      color: $color_royal_blue_approx;
+      background-color: $color_celeste_approx;
+    }
+    &:focus {
+      color: $color_cerulean_blue_approx;
+      background-color: $color_celeste_approx;
+    }
+    .ink {
+      background-color: $gray;
+    }
+  }
+  &.btn-success {
+    color: $color_forest_green_approx;
+    background-color: transparent;
+    &:hover {
+      color: $color_forest_green_approx;
+      background-color: $mercury;
+    }
+    &:active {
+      color: $color_japanese_laurel_approx;
+      background-color: $color_celeste_approx;
+    }
+    &.active {
+      color: $color_japanese_laurel_approx;
+      background-color: $color_celeste_approx;
+    }
+    &:focus {
+      color: $color_japanese_laurel_approx;
+      background-color: $color_celeste_approx;
+    }
+    .ink {
+      background-color: $gray;
+    }
+  }
+  &.btn-info {
+    color: $color_cerulean_approx;
+    background-color: transparent;
+    &:hover {
+      color: $color_cerulean_approx;
+      background-color: $mercury;
+    }
+    &:active {
+      color: $color_lochmara_approx;
+      background-color: $color_celeste_approx;
+    }
+    &.active {
+      color: $color_lochmara_approx;
+      background-color: $color_celeste_approx;
+    }
+    &:focus {
+      color: $color_lochmara_approx;
+      background-color: $color_celeste_approx;
+    }
+    .ink {
+      background-color: $gray;
+    }
+  }
+  &.btn-warning {
+    color: $color_amber_approx;
+    background-color: transparent;
+    &:hover {
+      color: $color_selective_yellow_approx;
+      background-color: $mercury;
+    }
+    &:active {
+      color: $orange_peel;
+      background-color: $color_celeste_approx;
+    }
+    &.active {
+      color: $orange_peel;
+      background-color: $color_celeste_approx;
+    }
+    &:focus {
+      color: $color_pizazz_approx;
+      background-color: $color_celeste_approx;
+    }
+    .ink {
+      background-color: $gray;
+    }
+  }
+  &.btn-danger {
+    color: $color_flamingo_approx;
+    background-color: transparent;
+    &:hover {
+      color: $color_pomegranate_approx;
+      background-color: $mercury;
+    }
+    &:active {
+      color: $color_pomegranate_approx;
+      background-color: $color_celeste_approx;
+    }
+    &.active {
+      color: $color_pomegranate_approx;
+      background-color: $color_celeste_approx;
+    }
+    &:focus {
+      color: $color_grenadier_approx;
+      background-color: $color_celeste_approx;
+    }
+    .ink {
+      background-color: $gray;
+    }
+  }
+}
+.btn-primary {
+  background-color: $color_cornflower_blue_approx;
+  &:hover {
+    background-color: $color_royal_blue_approx;
+  }
+  &:active {
+    background-color: $color_royal_blue_approx;
+  }
+  &.active {
+    background-color: $color_royal_blue_approx;
+  }
+  &:focus {
+    background-color: $color_royal_blue_approx;
+  }
+  &:disabled {
+    background-color: $color_nobel_approx;
+  }
+  &.disabled {
+    background-color: $color_nobel_approx;
+  }
+  .ink {
+    background-color: $color_cerulean_blue_approx;
+  }
+}
+.btn-primary[disabled] {
+  background-color: $color_nobel_approx;
+}
+.btn-success {
+  background-color: $color_forest_green_approx;
+  &:hover {
+    background-color: $color_forest_green_approx;
+  }
+  &:active {
+    background-color: $color_forest_green_approx;
+  }
+  &.active {
+    background-color: $color_forest_green_approx;
+  }
+  &:focus {
+    background-color: $color_japanese_laurel_approx;
+  }
+  &:disabled {
+    background-color: $color_nobel_approx;
+  }
+  &.disabled {
+    background-color: $color_nobel_approx;
+  }
+  .ink {
+    background-color: $color_japanese_laurel_approx;
+  }
+}
+.btn-success[disabled] {
+  background-color: $color_nobel_approx;
+}
+.btn-info {
+  background-color: $color_cerulean_approx;
+  &:hover {
+    background-color: $color_cerulean_approx;
+  }
+  &:active {
+    background-color: $color_cerulean_approx;
+  }
+  &.active {
+    background-color: $color_cerulean_approx;
+  }
+  &:focus {
+    background-color: $color_lochmara_approx;
+  }
+  &:disabled {
+    background-color: $color_nobel_approx;
+  }
+  &.disabled {
+    background-color: $color_nobel_approx;
+  }
+  .ink {
+    background-color: $color_lochmara_approx;
+  }
+}
+.btn-info[disabled] {
+  background-color: $color_nobel_approx;
+}
+.btn-warning {
+  background-color: $color_amber_approx;
+  &:hover {
+    background-color: $color_selective_yellow_approx;
+  }
+  &:active {
+    background-color: $color_selective_yellow_approx;
+  }
+  &.active {
+    background-color: $color_selective_yellow_approx;
+  }
+  &:focus {
+    background-color: $orange_peel;
+  }
+  &:disabled {
+    background-color: $color_nobel_approx;
+  }
+  &.disabled {
+    background-color: $color_nobel_approx;
+  }
+  .ink {
+    background-color: $color_pizazz_approx;
+  }
+}
+.btn-warning[disabled] {
+  background-color: $color_nobel_approx;
+}
+.btn-danger {
+  background-color: $color_flamingo_approx;
+  &:hover {
+    background-color: $color_pomegranate_approx;
+  }
+  &:active {
+    background-color: $color_pomegranate_approx;
+  }
+  &.active {
+    background-color: $color_pomegranate_approx;
+  }
+  &:focus {
+    background-color: $color_pomegranate_approx;
+  }
+  &:disabled {
+    background-color: $color_nobel_approx;
+  }
+  &.disabled {
+    background-color: $color_nobel_approx;
+  }
+  .ink {
+    background-color: $color_grenadier_approx;
+  }
+}
+.btn-danger[disabled] {
+  background-color: $color_nobel_approx;
+}
+.btn-lg {
+  @extend %extend_2;
+}
+.btn-sm {
+  @extend %extend_3;
+}
+.btn-xs {
+  @extend %extend_4;
+}
+.btn-circle {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  span {
+    line-height: 56px;
+  }
+  &.btn-lg {
+    width: 78px;
+    height: 78px;
+    min-width: 78px;
+    span {
+      line-height: 78px;
+    }
+  }
+  &.btn-sm {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    span {
+      line-height: 40px;
+    }
+  }
+  &.btn-xs {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    span {
+      line-height: 30px;
+    }
+  }
+}
+.btn-group {
+  .btn {
+    //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+    border-radius: 2px;
+    + {
+      .btn {
+        margin-left: 0;
+      }
+      .btn-group {
+        margin-left: 0;
+      }
+    }
+  }
+  &.open .dropdown-toggle {
+    outline: 0;
+    outline-offset: 0;
+    //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none;
+  }
+  .btn-group + {
+    .btn {
+      margin-left: 0;
+    }
+    .btn-group {
+      margin-left: 0;
+    }
+  }
+  > .btn {
+    &:hover {
+      z-index: 0;
+    }
+    &:focus:hover {
+      z-index: 2;
+    }
+    &:active:hover {
+      z-index: 2;
+    }
+    &.active:hover {
+      z-index: 2;
+    }
+  }
+}
+.ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+.ink {
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  //Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+  transform: scale(0);
+  background: $white;
+  opacity: 1;
+  &.animate {
+    animation: ripple .5s linear;
+  }
+}
+@keyframes ripple {
+  100% {
+    opacity: 0;
+    //Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale(2.5);
+  }
+}
+@-webkit-keyframes ripple {
+  100% {
+    opacity: 0;
+    //Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale(2.5);
+  }
+}
+@-moz-keyframes ripple {
+  100% {
+    opacity: 0;
+    //Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale(2.5);
+  }
+}
+@-ms-keyframes ripple {
+  100% {
+    opacity: 0;
+    //Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale(2.5);
+  }
+}
+@-o-keyframes ripple {
+  100% {
+    opacity: 0;
+    //Instead of the line below you could use @includetransform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+    transform: scale(2.5);
+  }
+}
+.btn-group-lg > .btn {
+  @extend %extend_2;
+}
+.btn-group-sm > .btn {
+  @extend %extend_3;
+}
+.btn-group-xs > .btn {
+  @extend %extend_4;
+}
+.btn-group-vertical > .btn {
+  &:hover {
+    z-index: 0;
+  }
+  &:focus:hover {
+    z-index: 2;
+  }
+  &:active:hover {
+    z-index: 2;
+  }
+  &.active:hover {
+    z-index: 2;
+  }
+}
