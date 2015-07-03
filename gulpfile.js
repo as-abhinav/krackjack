@@ -1,7 +1,7 @@
 /*
 
   ==================================================
-  ** Project : Gulpfile for Gulp-Compass-Neat
+  ** Project : Gulpfile for Gulp-sass-Neat
   ** Version : 0.0.1
   ** Author  : Vaibhav S
   ** Date    : 21.05.2015
@@ -14,7 +14,7 @@
 var gulp          = require('gulp'),
     uglify        = require('gulp-uglify'),
     concat        = require('gulp-concat'),
-    compass       = require('gulp-compass'),
+    sass       = require('gulp-sass'),
     cssmin        = require('gulp-minify-css'),
     rename        = require('gulp-rename'),
     ignore        = require('gulp-ignore'), // Ignore files that don't need to be deleted from the folder
@@ -36,12 +36,12 @@ var paths = {
 };
 
 var dest  = {
-    css         : 'app/css',
-    script      : 'app/Scripts/custom',
-    image       : 'app/images'
+    css         : 'app/assets/css',
+    script      : 'app/assets/js/app',
+    image       : 'app/assets/images'
 };
 
-// Compass Modules here
+// sass Modules here
 var modules = ['breakpoint'];
 
 
@@ -65,7 +65,7 @@ gulp.task('browser-sync', function () {
 
 // Notification Centre
 var cleanUp       = "Cleanup Done";
-var cssMessage    = "Compass Compilation Done";
+var cssMessage    = "sass Compilation Done";
 var htmlMessage   = "HTML Changes Reloaded";
 var imgMesssage   = "Images Compressed";
 var jsMessage     = "Javascript Changes Reloaded";
@@ -78,26 +78,19 @@ var jsMessage     = "Javascript Changes Reloaded";
    ==========================
 */
 
-// Compass Tasks here
-gulp.task('compass', function() {
-  return gulp
-        .src(paths.sass)
-        .pipe(plumber({
-          errorHandler: notify.onError("Compass build failed")
-        }))
-        .pipe(compass({
-            sass        : paths.stylesheet,
-            css         : dest.css,
-            require     : modules
-
-        }))
-        .pipe(cssmin())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(dest.css))
-        .pipe(notify({message: cssMessage}))
-        .pipe(reload({stream: true})); // This is for Browser-Sync
+// sass Tasks here
+gulp.task('sass', function () {
+  gulp.src(paths.sass)
+    .pipe(sass({
+        sass        : paths.stylesheet,
+        css         : dest.css,
+        require     : modules
+    }))
+    .pipe(cssmin())
+    .pipe(notify({message: cssMessage}))
+    .pipe(gulp.dest(dest.css))
+    .pipe(reload({stream: true}));
 });
-
 
 // JS Tasks Here
 gulp.task('scripts', function() {
@@ -146,7 +139,7 @@ gulp.task('clean', function() {
 
 //Watch here
 gulp.task('watch', function() {
-        gulp.watch(paths.sass, ['compass']);  // Compass Watch
+        gulp.watch(paths.sass, ['sass']);  // sass Watch
         gulp.watch('app/css/*.css', ['clean']); // Clean Watch
         gulp.watch('app/*.html', ['html']); // HTML Watch
         gulp.watch(paths.js, ['scripts']); // Script Watch

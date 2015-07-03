@@ -3,11 +3,9 @@
   "version": "0.0.1",
   "description": " This is a professional front-end scaffholding for building fast, robust, and adaptable web apps or sites.",
   "main": "index.html",
-
   "dependencies": {
     "gulp": "^3.8.8",
-    "gulp-compass": "^2.0.1"
-
+    "gulp-sass": "^2.0.3"
   },
   "devDependencies": {
     "browser-sync": "^1.6.5",
