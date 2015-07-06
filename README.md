@@ -1,8 +1,8 @@
 # Gulp Compass Neat Bourbon Yeoman Generator
 
-> This Yeoman Generator lets you quickly setup a project with defaults and folder structure. It allows you to take over the design and structure.
+> This lets you quickly setup a project with a scaffolding css based on material design. It allows you to take over the design and structure.
 
-* [Compass](http://compass-style.org/) and [Sass](http://sass-lang.com/) for Styling
+* [Sass](http://sass-lang.com/) for Styling
 
 * [Neat](http://thoughtbot.github.io/neat-docs/latest/) for grid system
 
@@ -14,21 +14,17 @@ Node JS & Node NPM needs to be installed globally on the system. Also you need t
 
 # Installation
 
-To install the generator-Gulp-Compass-Neat from npm run:
-$ npm install -g generator-gulp-compass-neat
+To install clone repo and -
+$ npm install
 
 
 # Usage
 Initiate the generation:
-cd into the project directory and run *yo gulp-compass-neat*. This will scaffhold the project for you.
 
 Once everything is ready, start the local-server:
 
 $ *gulp*
 
-#To learn more about Yeoman :
-
-Yeoman has a heart of gold. If you'd like to know more about Yeoman checkout the complete official documentation [Getting Started Guide](https://github.com/yeoman/yeoman "Yeoman")
 
 #License
 
